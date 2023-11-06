@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      // "target": "es5",
+      "module": "ESNext", 
+      "esModuleInterop": true,                                 /* Specify what module code is generated. */
+      "moduleResolution": "node", 
+      "outDir": "dist",
+      "strict": true,
+      "target": "es2015",
+    "downlevelIteration": true
+    },
+    "ts-node": {
+      "esm": true,
+      "experimentalSpecifierResolution": "node"
+    }
+  }
+  
