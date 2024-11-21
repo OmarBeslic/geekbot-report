@@ -17,17 +17,6 @@ interface TempoResponse {
   results: Worklog[];
 }
 
-//Steps to get oauth token
-//https://autaut.atlassian.net/plugins/servlet/ac/io.tempo.jira/oauth-authorize/?client_id=F5cGnavZSZWno3wqY40d9tCOW0ECAf2eOvTBEqkaczn9ngqSbg&redirect_uri=geekbot-report
-//where client id and redirect url is tempo-settings-oauth2, type that url in browser you will get the code and then go to postman
-//send post to this https://api.tempo.io/oauth/token/
-//add this to boddy under x-www-form-urlencoded
-// grant_type:authorization_code
-// client_id:F5cGnavZSZWno3wqY40d9tCOW0ECAf2eOvTBEqkaczn9ngqSbg
-// client_secret:BkJRtSjHAt5jMHq5N0O4fCAMs2coGXTgtSqrBzeYuH8s3p1jkIFXFBBpWCsZvEKp2hV6j58SCLs1BcKJLNBixsyfdzpX2YP1iG606uHNkJSrkObIR0W5dPNpd3xyFUMH
-// redirect_uri:geekbot-report
-// code:MQgE4A6bBavKGKljQR1_lHcRgLhYyEc7GsO99-1E0Qg // previously got code from url
-
 export async function makeTempoRequest(fromDate: string) {
   const tempoOauthToken: string = process.env.TEMPO_OAUTH_TOKEN || "";
   const tempoUrl: string = process.env.TEMPO_API || "";
